@@ -196,9 +196,10 @@ class td_menu {
 
                 $new_item->title .= td_global_blocks::get_instance('td_block_mega_menu')->render(
                     array(
-                        'limit' => '5',
+                        // 'limit' => '5',
+                        'limit' => '3',//ZA Custom
                         'td_column_number' => 3,
-                        'ajax_pagination' => 'next_prev',
+                        // 'ajax_pagination' => 'next_prev', //ZA Custom
                         'category_id' => $td_mega_menu_cat,
                         'show_child_cat' => $td_render_atts['show_child_cat'],
                         'td_ajax_filter_type' => 'td_category_ids_filter',

@@ -17,6 +17,8 @@
 if (is_singular()) {
     $td_post_theme_settings = get_post_meta($post->ID, 'td_post_theme_settings', true);
     $td_page = get_post_meta($post->ID, 'td_page', true);
+
+    // echo print_r($td_page,1);
 }
 
 if (!empty($td_post_theme_settings['td_sidebar'])) {

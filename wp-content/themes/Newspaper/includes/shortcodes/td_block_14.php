@@ -72,7 +72,6 @@ class td_block_14 extends td_block {
                             $buffy .= $td_block_layout->close_row();
                         }
 
-
                         break;
 
                     case '3': //three column layout

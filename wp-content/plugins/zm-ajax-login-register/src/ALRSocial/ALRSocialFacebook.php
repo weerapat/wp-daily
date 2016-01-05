@@ -242,7 +242,8 @@ Class ALRSocialFacebook {
             $text = '<img src="' . wp_get_attachment_url( $zm_alr_settings[ $this->prefix . '_login_button' ] ) . '" />';
         } else {
             $logo_class = 'fb-login-logo';
-            $text = __( 'Log in using Facebook', ZM_ALR_TEXT_DOMAIN );
+            // $text = __( 'SIGN UP WITH FACEBOOK', ZM_ALR_TEXT_DOMAIN );
+            $text = __( 'SIGN IN WITH FACEBOOK', ZM_ALR_TEXT_DOMAIN ); // ZA Custom
         }
 
         $above_html .= sprintf( '<div class="%s"><a href="#" class="fb-login %s" data-zm_alr_facebook_security="%s">%s</a></div>',

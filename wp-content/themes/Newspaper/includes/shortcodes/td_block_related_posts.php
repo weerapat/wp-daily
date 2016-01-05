@@ -33,8 +33,19 @@ class td_block_related_posts extends td_block {
 
         //get the filter for this block
         $buffy .= '<h4 class="td-related-title">';
-            $buffy .= '<a id="' . td_global::td_generate_unique_id() . '" class="td-related-left td-cur-simple-item" data-td_filter_value="" data-td_block_id="' . $this->block_uid . '" href="#">' . __td('RELATED ARTICLES', TD_THEME_NAME) . '</a>';
-            $buffy .= '<a id="' . td_global::td_generate_unique_id() . '" class="td-related-right" data-td_filter_value="td_related_more_from_author" data-td_block_id="' . $this->block_uid . '" href="#">' . __td('MORE FROM AUTHOR', TD_THEME_NAME) . '</a>';
+            // $buffy .= '<a id="' . td_global::td_generate_unique_id() . '" class="td-related-left td-cur-simple-item" data-td_filter_value="" data-td_block_id="' . $this->block_uid . '" href="#">' . __td('RELATED ARTICLES', TD_THEME_NAME) . '</a>';
+            $buffy .= '<span class="title-inner">'.__td('RELATED ARTICLES', TD_THEME_NAME).'</span>';
+            // ZA Custom
+            $buffy .= '<div id="related-filter">Filter <img src="/wp-content/uploads/2015/12/icon-caret-down_white.png" alt=""></div>';
+            $buffy .= '<div class="td-related-mobile">';
+            $buffy .= '<a id="' . td_global::td_generate_unique_id() . '" class="td-related-right " data-td_filter_value="td_related_more_from_author" data-td_block_id="' . $this->block_uid . '" href="#"><div class="td-related-mobile-inner"><div class="icon-title"><img class="NEUTRAL" src="/wp-content/uploads/2015/12/icon-articleNeutual.png" alt=""><img class="NEUTRAL-hover" src="/wp-content/uploads/2015/12/icon-articleNeutual-selected.png" alt=""><span> NEUTRAL</span></div></div></a>';
+            $buffy .= '<a id="' . td_global::td_generate_unique_id() . '" class="td-related-right" data-td_filter_value="td_tag_slug_filter_happy" data-td_block_id="' . $this->block_uid . '" href="#"><div class="td-related-mobile-inner"><div class="icon-title"><img class="HAPPY" src="/wp-content/uploads/2015/12/icon-articleHappy.png" alt=""><img class="HAPPY-hover" src="/wp-content/uploads/2015/12/icon-articleHappy-selected.png" alt=""><span> HAPPY</span></div></div></a>';
+            $buffy .= '<a id="' . td_global::td_generate_unique_id() . '" class="td-related-right" data-td_filter_value="td_tag_slug_filter_funny" data-td_block_id="' . $this->block_uid . '" href="#"><div class="td-related-mobile-inner"><div class="icon-title"><img class="HAPPY" src="/wp-content/uploads/2015/12/icon-articleFunny.png" alt=""><img class="HAPPY-hover" src="/wp-content/uploads/2015/12/icon-articleFunny-selected.png" alt=""><span> FUNNY</span></div></div></a>';
+            $buffy .= '<a id="' . td_global::td_generate_unique_id() . '" class="td-related-right" data-td_filter_value="td_tag_slug_filter_romantic" data-td_block_id="' . $this->block_uid . '" href="#"><div class="td-related-mobile-inner"><div class="icon-title"><img class="HAPPY" src="/wp-content/uploads/2015/12/icon-articleRomantic.png" alt=""><img class="HAPPY-hover" src="/wp-content/uploads/2015/12/icon-articleRomantic-selected.png" alt=""><span> ROMANTIC</span></div></div></a>';
+            $buffy .= '<a id="' . td_global::td_generate_unique_id() . '" class="td-related-right" data-td_filter_value="td_tag_slug_filter_surprised" data-td_block_id="' . $this->block_uid . '" href="#"><div class="td-related-mobile-inner"><div class="icon-title"><img class="HAPPY" src="/wp-content/uploads/2015/12/icon-articleSurprised.png" alt=""><img class="HAPPY-hover" src="/wp-content/uploads/2015/12/icon-articleSurprised-selected.png" alt=""><span> SURPRISED</span></div></div></a>';
+            $buffy .= '<a id="' . td_global::td_generate_unique_id() . '" class="td-related-right" data-td_filter_value="td_tag_slug_filter_sad" data-td_block_id="' . $this->block_uid . '" href="#"><div class="td-related-mobile-inner"><div class="icon-title"><img class="HAPPY" src="/wp-content/uploads/2015/12/icon-articleSad.png" alt=""><img class="HAPPY-hover" src="/wp-content/uploads/2015/12/icon-articleSad-selected.png" alt=""><span> SAD</span></div></div></a>';
+            $buffy .= '</div>';
+            // End ZA Custom
         $buffy .= '</h4>';
 
         $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
@@ -116,4 +127,3 @@ class td_block_related_posts extends td_block {
 
     }
 }
-

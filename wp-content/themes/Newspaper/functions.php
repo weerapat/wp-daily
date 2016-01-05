@@ -128,4 +128,53 @@ if (TD_DEBUG_LIVE_THEME_STYLE) {
     <?php
     }
 }
+// Get Display name shortcode
+add_shortcode( 'current-username' , 'ss_get_current_username' );
+function ss_get_current_username(){
+    $user = wp_get_current_user();
+    return $user->display_name;
+}
+// Get Firstname shortcode
+add_shortcode( 'current-firstname' , 'ss_get_current_firstname' );
+function ss_get_current_firstname(){
+    $current_user = wp_get_current_user();
+    return $current_user->user_firstname;
+}
+// Get Avatar shortcode
+add_shortcode( 'current-avatar' , 'ss_get_current_avatar' );
+function ss_get_current_avatar(){
+    $user = wp_get_current_user();
+    $ID = $user->ID ;
+    return get_avatar($ID,40);
+}
 
+//  hidden login, register menu
+function hidden_menu(){
+	if(is_user_logged_in()){
+		echo '<style>
+		.menu-item-189 {
+			display:none !important;
+		}
+		.menu-item-190 {
+			display:none !important;
+		}
+		</style>';
+		}
+	else{
+		echo '<style>
+		.menu-item-412 {
+			display:none !important;
+		}
+		</style>';
+	}
+}
+// search post only
+function SearchFilter($query) {
+
+if ($query->is_search) {
+$query->set('post_type', 'post');
+}
+return $query;
+}
+
+add_filter('pre_get_posts','SearchFilter');

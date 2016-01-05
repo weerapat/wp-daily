@@ -273,12 +273,22 @@ abstract class td_module {
 
 
             $buffy .= '<div class="td-module-thumb">';
-                if (current_user_can('edit_posts')) {
-                    $buffy .= '<a class="td-admin-edit" href="' . get_edit_post_link($this->post->ID) . '">edit</a>';
+                // if (current_user_can('edit_posts')) {
+                //     $buffy .= '<a class="td-admin-edit" href="' . get_edit_post_link($this->post->ID) . '">edit</a>';
+                // }
+                // ZA Custom
+            if(is_user_logged_in()){
+                if(wpfp_check_favorited($this->post->ID) === true){
+                    $bookmark_link = '<a class="wpfp-link wpfp-style" href="?wpfpaction=remove&amp;postid='.$this->post->ID.'" title="Remove" rel="nofollow"><img class="icon-bookmark" src="/wp-content/uploads/2015/12/icon-bookmark-orange.png" alt=""><img class="icon-bookmark-hover" src="/wp-content/uploads/2015/11/icon-bookmark.png" alt=""></a>';
+                }else{
+                    $bookmark_link = '<a class="wpfp-link wpfp-style" href="?wpfpaction=add&amp;postid='.$this->post->ID.'" title="Bookmark" rel="nofollow"><img class="icon-bookmark" src="/wp-content/uploads/2015/11/icon-bookmark.png" alt=""><img class="icon-bookmark-hover" src="/wp-content/uploads/2015/11/icon-bookmark-added.png" alt=""></a>';
                 }
-
-                $buffy .='<a href="' . $this->href . '" rel="bookmark" title="' . $this->title_attribute . '">';
-                    $buffy .= '<img width="' . $td_temp_image_url[1] . '" height="' . $td_temp_image_url[2] . '" itemprop="image" class="entry-thumb" src="' . $td_temp_image_url[0] . '" ' . $attachment_alt . $attachment_title . '/>';
+            }else{
+                $bookmark_link = '<a class="wpfp-style register-dialog" href="http://rabbitworld.ready.co.th/?page_id=187" title="Bookmark" rel="nofollow"><img class="icon-bookmark" src="/wp-content/uploads/2015/11/icon-bookmark.png" alt=""><img class="icon-bookmark-hover" src="/wp-content/uploads/2015/11/icon-bookmark-added.png" alt=""></a>';
+            }
+                
+                $buffy .=$bookmark_link.'<a href="' . $this->href . '" rel="bookmark" title="' . $this->title_attribute . '">';
+                $buffy .= '<img width="' . $td_temp_image_url[1] . '" height="' . $td_temp_image_url[2] . '" itemprop="image" class="entry-thumb" src="' . $td_temp_image_url[0] . '" ' . $attachment_alt . $attachment_title . '/>';
 
                         // on videos add the play icon
                         if (get_post_format($this->post->ID) == 'video') {
@@ -440,7 +450,69 @@ abstract class td_module {
 
 
         if (!empty($selected_category_obj)) { //@todo catch error here
-            $buffy .= '<a href="' . get_category_link($selected_category_obj->cat_ID) . '" class="td-post-category">'  . $selected_category_obj->name . '</a>' ;
+            // ZA Custom
+            $catParID = $selected_category_obj->category_parent;
+            $cat_ID = $selected_category_obj->cat_ID;
+            switch ($catParID) {
+                case '3':
+                $color = '#ad47b3';
+                break;
+                case '4 ':
+                $color = '#1A6CBE';
+                break;
+                case '7':
+                $color = '#FF3963';
+                break;
+                case '8':
+                $color = '#4E5864';
+                break;
+                case '5':
+                $color = '#84bd00';
+                break;
+                case '6':
+                $color = '#FFC000';
+                break;
+                case '9':
+                $color = '#ff0000';
+                break;
+                case '10':
+                $color = '#00abc4';
+                break;
+                case '0':
+                switch($cat_ID){
+                    case '3':
+                    $color = '#ad47b3';
+                    break;
+                    case '4 ':
+                    $color = '#1A6CBE';
+                    break;
+                    case '7':
+                    $color = '#FF3963';
+                    break;
+                    case '8':
+                    $color = '#4E5864';
+                    break;
+                    case '5':
+                    $color = '#84bd00';
+                    break;
+                    case '6':
+                    $color = '#FFC000';
+                    break;
+                    case '9':
+                    $color = '#ff0000';
+                    break;
+                    case '10':
+                    $color = '#00abc4';
+                    break;
+                }
+                break;
+                default:
+                $color = '#fd6f08';
+                break;
+            }
+            // End ZA Custom
+            $buffy .= '<a href="' . get_category_link($selected_category_obj->cat_ID) . '" class="td-post-category" style="background-color: ' . $color . '!important; color: #fff !important">' . $selected_category_obj->name . '<div class="td-post-category-arrow" style="border-top-color: ' . $color . '"></div></a>' ;
+            
         }
 
         //return print_r($post, true);

@@ -132,7 +132,6 @@ function zm_ajax_login_register_enqueue_scripts(){
     }
 
     global $zm_alr_settings;
-
     wp_localize_script( 'ajax-login-register-script', '_zm_alr_settings', apply_filters( 'zm_alr_localized_js', array(
         'ajaxurl'         => admin_url("admin-ajax.php"),
         'login_handle'    => $zm_alr_settings['zm_alr_misc_login_handle'],
@@ -140,8 +139,8 @@ function zm_ajax_login_register_enqueue_scripts(){
         'redirect'        => $zm_alr_settings['zm_alr_redirect_redirect_after_login_url'],
         // 'match_error'    => AjaxLogin::status('passwords_do_not_match','description'), // Deprecated
         'wp_logout_url'   => wp_logout_url( site_url() ),
-        'logout_text'     => __( 'ออกจากระบบ', ZM_ALR_TEXT_DOMAIN ),
-        'close_text'      => __( 'ปิด', ZM_ALR_TEXT_DOMAIN ),
+        'logout_text'     => __('ออกจากระบบ, ', ZM_ALR_TEXT_DOMAIN ),
+        'close_text'      => __( 'x', ZM_ALR_TEXT_DOMAIN ),
         'pre_load_forms'  => $zm_alr_settings['zm_alr_misc_pre_load_forms'],
         'logged_in_text'  => __('คุณได้เข้าสู่ระบบแล้ว', ZM_ALR_TEXT_DOMAIN ),
         'registered_text' => __( 'คุณได้ลงทะเบียนแล้ว', ZM_ALR_TEXT_DOMAIN ),
@@ -155,6 +154,8 @@ function zm_ajax_login_register_enqueue_scripts(){
     ) ) );
 
 }
+// $current_user = wp_get_current_user();
+// echo $current_user->user_login
 add_action( 'wp_enqueue_scripts', 'zm_ajax_login_register_enqueue_scripts');
 
 

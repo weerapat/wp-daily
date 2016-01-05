@@ -36,7 +36,7 @@ class td_block_mega_menu extends td_block {
             ));
 
 		    if (!empty($td_subcats)) {
-			    $atts['limit'] = 4; //alter the loop because we don't have space now with the categories
+			    $atts['limit'] = 3; //alter the loop because we don't have space now with the categories
 		    }
 	    }
 
@@ -140,7 +140,7 @@ class td_block_mega_menu extends td_block {
 
                 //show all categories only on ajax
                 if (empty($sub_cat_ajax)) {
-                    $buffy .= '<a class="cur-sub-cat mega-menu-sub-cat-' . $this->block_uid . '" id="' . td_global::td_generate_unique_id() . '" data-td_block_id="' . $this->block_uid . '" data-td_filter_value="" href="' . get_category_link($category_id) . '">' . __td('All', TD_THEME_NAME) . '</a>';
+                    $buffy .= '<a class="cur-sub-cat mega-menu-sub-cat-' . $this->block_uid . '" id="' . td_global::td_generate_unique_id() . '" data-td_block_id="' . $this->block_uid . '" data-td_filter_value="" href="' . get_category_link($category_id) . '"><span>' . __td('All', TD_THEME_NAME) . '</span></a>';
                 }
 
                 foreach ($td_subcategories as $td_category) {
@@ -148,7 +148,7 @@ class td_block_mega_menu extends td_block {
                         'name' => $td_category->name,
                         'id' => $td_category->cat_ID
                     );
-                    $buffy .= '<a class="mega-menu-sub-cat-' . $this->block_uid . '"  id="' . td_global::td_generate_unique_id() . '" data-td_block_id="' . $this->block_uid . '" data-td_filter_value="' . $td_category->cat_ID . '" href="' . get_category_link($td_category->cat_ID) . '">' . $td_category->name . '</a>';
+                    $buffy .= '<a class="mega-menu-sub-cat-' . $this->block_uid . '"  id="' . td_global::td_generate_unique_id() . '" data-td_block_id="' . $this->block_uid . '" data-td_filter_value="' . $td_category->cat_ID . '" href="' . get_category_link($td_category->cat_ID) . '"><span>' . $td_category->name . '</span></a>';
                 }
 
 

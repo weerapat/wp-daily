@@ -73,6 +73,7 @@ function wpfp_add_favorite($post_id = "") {
 
     if (wpfp_do_add_to_list($post_id)) {
         // added, now?
+        // wp_set_post_tags( $post_id, 'bookmark', true );
         do_action('wpfp_after_add', $post_id);
         if (wpfp_get_option('statistics')) wpfp_update_post_meta($post_id, 1);
         if (wpfp_get_option('added') == 'show remove link') {
@@ -169,7 +170,14 @@ function wpfp_link( $return = 0, $action = "", $show_span = 1, $args = array() )
 }
 
 function wpfp_link_html($post_id, $opt, $action) {
-    $link = "<a class='wpfp-link' href='?wpfpaction=".$action."&amp;postid=". $post_id . "' title='". $opt ."' rel='nofollow'>". $opt ."</a>";
+    // ZA Custom
+    if ( is_user_logged_in() ) {
+        $link = "<a class='wpfp-link' href='?wpfpaction=".$action."&amp;postid=". $post_id . "' title='บันทึกบทความ' rel='nofollow'>". $opt ."</a>";
+    }
+    else{
+        $link = "<a class='wpfp-link register-dialog' href='?page_id=187' title='บันทึกบทความ' rel='nofollow'>". $opt ."</a>";
+    }
+    // ZA End
     $link = apply_filters( 'wpfp_link_html', $link );
     return $link;
 }

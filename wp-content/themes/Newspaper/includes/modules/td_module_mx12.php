@@ -26,10 +26,10 @@ class td_module_mx12 extends td_module {
                         <?php if (td_util::get_option('tds_category_module_mx12') == 'yes') { echo $this->get_category(); }?>
                         <?php echo $this->get_title();?>
                     </div>
-                    <div class="td-module-meta-info">
+                    <!-- <div class="td-module-meta-info">
                         <?php echo $this->get_author();?>
                         <?php echo $this->get_date();?>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

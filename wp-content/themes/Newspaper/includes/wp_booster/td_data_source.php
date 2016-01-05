@@ -201,6 +201,22 @@ class td_data_source {
                     $wp_query_args['post__not_in'] = array($live_filter_cur_post_id);
                     break;
 
+                // ZA Custom
+                case 'cur_post_same_tags_happy':
+                    $wp_query_args['tag__in'] = "44";
+                    break;
+                case 'cur_post_same_tags_funny':
+                    $wp_query_args['tag__in'] = "45";
+                    break;
+                case 'cur_post_same_tags_romantic':
+                    $wp_query_args['tag__in'] = "46";
+                    break;
+                case 'cur_post_same_tags_surprised':
+                    $wp_query_args['tag__in'] = "47";
+                    break;
+                case 'cur_post_same_tags_sad':
+                    $wp_query_args['tag__in'] = "48";
+                    break;
             }
         }
 

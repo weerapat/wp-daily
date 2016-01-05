@@ -118,13 +118,13 @@ Class ALRRegister {
 
         $fields_html = $this->_zm_alr_html->buildFormFieldsHtml( array(
             $this->prefix . '_user_name' => array(
-                'title' => __( 'User Name', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'Username or your@mail.com', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'text',
                 'required' => true,
                 'extra' => 'autocorrect="none" autocapitalize="none"'
                 ),
             $this->prefix . '_email' => array(
-                'title' => __( 'Email', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'Your@mail.com', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'email',
                 'required' => true,
                 'extra' => 'autocorrect="none" autocapitalize="none"'
@@ -141,7 +141,7 @@ Class ALRRegister {
                 'extra' => 'autocorrect="none" autocapitalize="none"'
                 ),
             $this->prefix . '_submit_button' => array(
-                'title' => __( 'Register', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'Sign Up', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'submit',
                 'extra' => 'disabled'
                 )
@@ -167,7 +167,7 @@ Class ALRRegister {
         $html .= '</div>';
 
         $html .= $fields_html;
-        $html .= $links_html;
+        // $html .= $links_html;
         $html .= '</div>';
         $html .= '</form>';
         $html .= '</div>';
@@ -395,6 +395,15 @@ Class ALRRegister {
          * Markup needed for jQuery UI dialog, our form is actually loaded via AJAX
          */
         ?><div id="ajax-login-register-dialog" class="<?php echo $classes; ?>" title="<?php _e( 'Register',  ZM_ALR_TEXT_DOMAIN ); ?>" data-security="<?php print wp_create_nonce( 'register_form' ); ?>" style="display: none;">
+            <!-- ZA Custom -->
+            <div class="ZA-register-text">
+                <p class="p1">Sign up for Rabbit Daily !</p>
+                <p class="p2">Get access to top stories !<br>
+                You can also save articles for later !</p>
+            </div>
+            <?php do_action('facebook_login_button');?>
+            <div class="login-line"></div>
+            <!-- End ZA Custom -->
             <div id="ajax-login-register-target" class="ajax-login-register-dialog"><?php _e( 'Loading...', ZM_ALR_TEXT_DOMAIN ); ?></div>
             <?php do_action( $this->prefix . '_after_dialog' ); ?>
         </div>

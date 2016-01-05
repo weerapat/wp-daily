@@ -1,14 +1,14 @@
-jQuery(document).ready( function($) {
-    $('.wpfp-link').live('click', function() {
-        dhis = $(this);
-        wpfp_do_js( dhis, 1 );
-        // for favorite post listing page
-        if (dhis.hasClass('remove-parent')) {
-            dhis.parent("li").fadeOut();
-        }
-        return false;
-    });
-});
+// jQuery(document).ready( function($) {
+//     $('.wpfp-link').live('click', function() {
+//         dhis = $(this);
+//         wpfp_do_js( dhis, 1 );
+//         // for favorite post listing page
+//         if (dhis.hasClass('remove-parent')) {
+//             dhis.parent("li").fadeOut();
+//         }
+//         return false;
+//     });
+// });
 
 function wpfp_do_js( dhis, doAjax ) {
     loadingImg = dhis.prev();

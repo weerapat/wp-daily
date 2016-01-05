@@ -1046,7 +1046,7 @@ class td_wp_booster_config {
                 )
             )
         );
-
+       
         td_api_thumb::add('td_265x198',
             array(
                 'name' => 'td_265x198',
@@ -1059,12 +1059,14 @@ class td_wp_booster_config {
                 )
             )
         );
-
+        // ZA
         td_api_thumb::add('td_324x160',
             array(
                 'name' => 'td_324x160',
-                'width' => 324,
-                'height' => 160,
+                // 'width' => 324,
+                // 'height' => 160,
+                'width' => 236,
+                'height' => 148,
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
@@ -1098,12 +1100,14 @@ class td_wp_booster_config {
                 )
             )
         );
-
+        // ZA
         td_api_thumb::add('td_356x220',
             array(
                 'name' => 'td_356x220',
-                'width' => 356,
-                'height' => 220,
+                // 'width' => 356,
+                // 'height' => 220,
+                'width' => 464,
+                'height' => 300,
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(

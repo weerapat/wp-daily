@@ -74,40 +74,7 @@ if ($td_use_page_builder) {
         <div class="td-pb-row">
             <?php
             switch ($loop_sidebar_position) {
-                default:
-                    ?>
-                        <div class="td-pb-span8 td-main-content" role="main" itemscope="itemscope" itemprop="mainContentOfPage" itemtype="<?php echo td_global::$http_or_https?>://schema.org/CreativeWork">
-                            <div class="td-ss-main-content">
-                                <?php
-                                if (have_posts()) {
-                                    while ( have_posts() ) : the_post();
-                                        ?>
-                                        <div class="td-page-header">
-                                            <h1 itemprop="name" class="entry-title td-page-title">
-                                                <span><?php the_title() ?></span>
-                                            </h1>
-                                        </div>
-                                        <div class="td-page-content">
-                                        <?php
-                                            the_content();
-                                    endwhile;//end loop
-
-                                }
-                                ?>
-                                </div>
-                                <?php
-                                if($td_enable_or_disable_page_comments == 'show_comments') {
-                                    comments_template('', true);
-                                }?>
-                            </div>
-                        </div>
-                        <div class="td-pb-span4 td-main-sidebar" role="complementary">
-                            <div class="td-ss-main-sidebar">
-                                <?php get_sidebar(); ?>
-                            </div>
-                        </div>
-                    <?php
-                    break;
+                
 
                 case 'sidebar_left':
                     ?>

@@ -98,7 +98,7 @@ Class ALRLogin {
             $html = sprintf(
                 "<p class='%s_text'>%s <a href=%s title='%s'>%s</a></p>",
                 $this->prefix,
-                __('You are already logged in', ZM_ALR_TEXT_DOMAIN ), // Text
+                __('คุณได้เข้าสู่ระบบเรียบร้อยแล้ว', ZM_ALR_TEXT_DOMAIN ), // Text
                 wp_logout_url( site_url() ), // URL
                 __('Logout', ZM_ALR_TEXT_DOMAIN ), // Link text
                 __('Logout', ZM_ALR_TEXT_DOMAIN ) // Link title text
@@ -144,7 +144,7 @@ Class ALRLogin {
 
         $fields_html = $this->_zm_alr_html->buildFormFieldsHtml( array(
             $this->prefix . '_user_name' => array(
-                'title' => __( 'User Name', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'Username or your@mail.com', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'text',
                 'extra' => 'autocorrect="none" autocapitalize="none"'
                 ),
@@ -153,12 +153,12 @@ Class ALRLogin {
                 'type' => 'password',
                 'extra' => 'autocorrect="none" autocapitalize="none"'
                 ),
-            $this->prefix . '_keep_me_logged_in' => array(
-                'title' => __( 'Keep Me Logged In', ZM_ALR_TEXT_DOMAIN ),
-                'type' => 'checkbox'
-                ),
+            // $this->prefix . '_keep_me_logged_in' => array(
+            //     'title' => __( 'Keep Me Logged In', ZM_ALR_TEXT_DOMAIN ),
+            //     'type' => 'checkbox'
+            //     ),
             $this->prefix . '_submit_button' => array(
-                'title' => __( 'Login', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'Sign In', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'submit'
                 )
             ), $this->prefix );
@@ -176,7 +176,8 @@ Class ALRLogin {
         $html .= '<div class="ajax-login-register-status-container">';
         $html .= '<div class="ajax-login-register-msg-target"></div>';
         $html .= '</div>';
-        $html .= $fields_html . $links_html;
+        // $html .= $fields_html . $links_html;
+        $html .= $fields_html; // ZA Custom
         $html .= '</div>';
         $html .= '</form>';
 
@@ -315,6 +316,9 @@ Class ALRLogin {
             ZM_ALR_NAMESPACE . '_dialog'
             ) ) ); ?>
         <div id="ajax-login-register-login-dialog" class="<?php echo $classes; ?>" title="<?php _e( 'Login', ZM_ALR_TEXT_DOMAIN ); ?>" data-security="<?php print wp_create_nonce( 'login_form' ); ?>">
+            <div class="ZA-login-text">Sign IN for Rabbit Daily !</div><!-- ZA Custom -->
+            <?php do_action('facebook_login_button');?>
+            <div class="login-line"></div>
             <div id="ajax-login-register-login-target" class="ajax-login-register-login-dialog"><?php _e( 'Loading...', ZM_ALR_TEXT_DOMAIN ); ?>
             </div>
             <?php do_action( $this->prefix . '_after_dialog' ); ?>

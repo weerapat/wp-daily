@@ -7,16 +7,23 @@
 ?>
 <div id="td-mobile-nav">
     <!-- mobile menu close -->
-    <div class="td-mobile-close">
+    <!-- <div class="td-mobile-close">
         <a href="#"><?php _etd('CLOSE', TD_THEME_NAME); ?></a>
         <div class="td-nav-triangle"></div>
-    </div>
+    </div> -->
 
     <div class="td-mobile-content">
         <?php
+        // ZA Custom
+        if(is_user_logged_in()) {
+            $menu = 'logged-in';
+        }
+        else{
+           $menu = 'logged-out';
+        }
         wp_nav_menu(array(
             'theme_location' => 'header-menu',
-            'menu_class'=> '',
+            'menu_class'=> $menu.'',
             'fallback_cb' => 'td_wp_no_mobile_menu'
         ));
 

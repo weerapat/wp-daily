@@ -6,7 +6,7 @@
  */
 class td_block_big_grid_5 extends td_block {
 
-    const POST_LIMIT = 3;
+    const POST_LIMIT = 6;
 
     function render($atts, $content = null){
 

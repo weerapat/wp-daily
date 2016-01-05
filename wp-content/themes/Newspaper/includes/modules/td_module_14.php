@@ -19,9 +19,9 @@ class td_module_14 extends td_module {
                     <div class="td-module-meta-holder">
                         <?php echo $this->get_title();?>
                         <?php if (td_util::get_option('tds_category_module_14') == 'yes') { echo $this->get_category(); }?>
-                        <?php echo $this->get_author();?>
-                        <?php echo $this->get_date();?>
-                        <?php echo $this->get_comments();?>
+                        <?php //echo $this->get_author();?>
+                        <?php //echo $this->get_date();?>
+                        <?php //echo $this->get_comments();?>
                     </div>
                 </div>
             </div>

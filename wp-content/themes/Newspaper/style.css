@@ -10644,7 +10644,8 @@ blockquote.pull-right:after {
 .td-trending-now-display-area {
   height: 25px;
   vertical-align: top;
-  padding: 0 0 0 15px;
+  /*padding: 0 0 0 15px;*/
+  padding: 0 0 0 30px; /*ZA Custom*/
   display: inline-block;
   /* responsive portrait phone */
 }

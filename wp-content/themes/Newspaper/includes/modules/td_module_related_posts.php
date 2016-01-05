@@ -11,12 +11,23 @@ class td_module_related_posts extends td_module {
         ob_start();
         ?>
 
-        <div class="<?php echo $this->get_module_classes(array("td_mod_related_posts")); ?>">
+        <!-- <div class="<?php echo $this->get_module_classes(array("td_mod_related_posts")); ?>">
             <div class="td-module-image">
                 <?php echo $this->get_image('td_218x150');?>
                 <?php if (td_util::get_option('tds_category_module_related_posts') == 'yes') { echo $this->get_category(); }?>
             </div>
             <div class="item-details">
+                <?php echo $this->get_title();?>
+            </div>
+        </div> -->
+        
+        <!-- ZA Custom -->
+        <div class="<?php echo $this->get_module_classes(array("td_mod_related_posts")); ?>">
+            <div class="td-module-image">
+                <?php echo $this->get_image('td_218x150');?>
+            </div>
+            <div class="item-details">
+                <?php if (td_util::get_option('tds_category_module_related_posts') == 'yes') { echo $this->get_category(); }?>
                 <?php echo $this->get_title();?>
             </div>
         </div>

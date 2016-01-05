@@ -146,7 +146,8 @@ class td_module_single_base extends td_module {
 				}
 
 
-				$buffy .= '<div class="td-post-featured-image">';
+				$buffy .= '<div class="td-post-featured-image" style="background-image: url('. $featured_image_info['src'] .')";
+">';
 
 				// caption - put html5 wrapper on when we have a caption
 				if (!empty($featured_image_info['caption'])) {
@@ -258,7 +259,8 @@ class td_module_single_base extends td_module {
 				}
 
 
-				$buffy .= '<li class="entry-category"><a ' . $td_cat_color . ' href="' . $term_params['link'] . '">' . $term_name . '</a></li>';
+				// $buffy .= '<li class="entry-category"><a ' . $td_cat_color . ' href="' . $term_params['link'] . '">' . $term_name . '</a></li>';
+				$buffy .= '<li class="entry-category"><a class="td-post-category"' . $td_cat_color . ' href="' . $term_params['link'] . '">' . $term_name . '<div class="td-post-category-arrow" style="border-top-color: '. $term_params['color'] .'"></div></a></li>'; //ZA Custom
 			}
 			$buffy .= '</ul>';
 		}
@@ -277,8 +279,10 @@ class td_module_single_base extends td_module {
 		$buffy = '';
 		if (td_util::get_option('tds_p_show_comments') != 'hide') {
 			$buffy .= '<div class="td-post-comments">';
-			$buffy .= '<a href="' . get_comments_link($this->post->ID) . '"><i class="td-icon-comments"></i>';
+			// $buffy .= '<a href="' . get_comments_link($this->post->ID) . '"><i class="td-icon-comments"></i>';
+			$buffy .= '<a href="' . get_comments_link($this->post->ID) . '">';
 			$buffy .= get_comments_number($this->post->ID);
+			$buffy .= '<span class="p1"> COMMENTS</span>'; // ZA Custom
 			$buffy .= '</a>';
 			$buffy .= '</div>';
 		}
@@ -290,7 +294,7 @@ class td_module_single_base extends td_module {
 		$buffy = '';
 		if (td_util::get_option('tds_p_show_views') != 'hide') {
 			$buffy .= '<div class="td-post-views">';
-			$buffy .= '<i class="td-icon-views"></i>';
+			// $buffy .= '<i class="td-icon-views"></i>';
 			// WP-Post Views Counter
 			if (function_exists('the_views')) {
 				$post_views = the_views(false);
@@ -300,7 +304,7 @@ class td_module_single_base extends td_module {
 			else {
 				$buffy .= '<span class="td-nr-views-' . $this->post->ID . '">' . td_page_views::get_page_views($this->post->ID) .'</span>';
 			}
-
+			$buffy .= '<span class="p1"> VIEW</span>'; // ZA Custom
 			$buffy .= '</div>';
 		}
 		return $buffy;
@@ -815,7 +819,8 @@ class td_module_single_base extends td_module {
 		 */
 		$td_block_args = array (
 			'limit' => $td_related_limit,
-			'ajax_pagination' => 'next_prev',
+			// 'ajax_pagination' => 'next_prev',
+			'ajax_pagination' => 'load_more',// ZA custom
 			'live_filter' => $td_related_ajax_filter_type,  //live atts - this is the default setting for this block
 			'td_ajax_filter_type' => 'td_custom_related', //this filter type can overwrite the live filter @see
 			'class' => $td_related_class,

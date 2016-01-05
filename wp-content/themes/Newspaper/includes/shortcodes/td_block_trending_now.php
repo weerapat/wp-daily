@@ -59,25 +59,24 @@ class td_block_trending_now extends td_block {
                 foreach ($posts as $post_count => $post) {
 
                     $td_module_trending_now = new td_module_trending_now($post);
-
                     $buffy .= $td_module_trending_now->render($post_count);
                 }
 
                 $buffy .= '</div>';
+                // ZA Cutom
+                // $buffy .= '<div class="td-next-prev-wrap">';
+                //     $buffy .= '<a href="#"
+                //                   class="td_ajax-prev-pagex td-trending-now-nav-left"
+                //                   data-wrapper-id="' . $trending_now_unique_id . '"
+                //                   data-moving="left"
+                //                   data-control-start="' . $navigation . '"><i class="td-icon-menu-left"></i></a>';
 
-                $buffy .= '<div class="td-next-prev-wrap">';
-                    $buffy .= '<a href="#"
-                                  class="td_ajax-prev-pagex td-trending-now-nav-left"
-                                  data-wrapper-id="' . $trending_now_unique_id . '"
-                                  data-moving="left"
-                                  data-control-start="' . $navigation . '"><i class="td-icon-menu-left"></i></a>';
-
-                    $buffy .= '<a href="#"
-                                  class="td_ajax-next-pagex td-trending-now-nav-right"
-                                  data-wrapper-id="' . $trending_now_unique_id . '"
-                                  data-moving="right"
-                                  data-control-start="' . $navigation . '"><i class="td-icon-menu-right"></i></a>';
-                $buffy .= '</div>';
+                //     $buffy .= '<a href="#"
+                //                   class="td_ajax-next-pagex td-trending-now-nav-right"
+                //                   data-wrapper-id="' . $trending_now_unique_id . '"
+                //                   data-moving="right"
+                //                   data-control-start="' . $navigation . '"><i class="td-icon-menu-right"></i></a>';
+                // $buffy .= '</div>';
             $buffy .= '</div>';
 
             $buffy .= $td_block_layout->close_row();

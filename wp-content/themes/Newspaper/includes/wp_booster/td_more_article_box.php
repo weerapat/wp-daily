@@ -165,8 +165,34 @@ class td_more_article_box {
                                 break;
 
                             default:
-                                $td_mod = new td_module_1($each_post);
-                                echo $td_mod->render();
+                                // $td_mod = new td_module_1($each_post);
+                                // echo $td_mod->render();
+
+                                // facebook //
+                                // $instance = array(
+                                //     "like_args" => array(
+                                //             "href" => "https://www.facebook.com/rabbitcard",
+                                //             "height" => "432",
+                                //             "show_faces" => "1",
+                                //             "stream" => "",
+                                //             "cover" => "1"
+                                //         )
+                                // );
+                                // the_widget( 'WPCOM_Widget_Facebook_LikeBox', $instance, $args ); 
+
+                                // facebook //
+                                echo '<div class="fb-page" data-href="https://www.facebook.com/rabbitcard" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/rabbitcard"><a href="https://www.facebook.com/rabbitcard">Rabbit</a></blockquote></div></div>';
+                                // twitter //
+                                echo '<br><br>';
+                                $number = str_replace(".", ",", reset(explode(" ", end(explode('title="', reset(explode("/Rabbit_Card/followers", file_get_contents("https://twitter.com/rabbit_card")))) )) ));
+                                echo '<div class="td_block_wrap td_block_social_counter td_block_widget td_block_id_2612886708 td_uid_50_564ad88d7b82d_rand td-pb-border-top">
+                                <div class="td_social_type td-pb-margin-side td_social_twitter">
+                                <div class="td-sp td-sp-twitter"></div>
+                                <span class="td_social_info">'.$number.'</span>
+                                <span class="td_social_info td_social_info_name">ผู้ติดตาม</span>
+                                <span class="td_social_button">
+                                <a href="https://twitter.com/Rabbit_Card" target="_blank">ติดตาม</a>
+                                </span></div></div>';
                                 break;
                         }
 
@@ -181,3 +207,4 @@ class td_more_article_box {
 
 //instantiate the class to create the more article box
 new td_more_article_box();
+// new Facebook_Like_Box_Widget();

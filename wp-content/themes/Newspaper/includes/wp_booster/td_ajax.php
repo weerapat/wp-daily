@@ -97,6 +97,23 @@ function td_ajax_block($ajax_parameters = '') {
                 if ($ajax_parameters['td_filter_value'] == 'td_related_more_from_author') {
                     $ajax_parameters['td_atts']['live_filter'] = 'cur_post_same_author'; // change the live filter for the related posts
                 }
+                // ZA Custom
+                else if ($ajax_parameters['td_filter_value'] == 'td_tag_slug_filter_happy') {
+                    $ajax_parameters['td_atts']['live_filter'] = 'cur_post_same_tags_happy'; // change the live filter for the related posts
+                }
+                else if ($ajax_parameters['td_filter_value'] == 'td_tag_slug_filter_funny') {
+                    $ajax_parameters['td_atts']['live_filter'] = 'cur_post_same_tags_funny'; // change the live filter for the related posts
+                }
+                else if ($ajax_parameters['td_filter_value'] == 'td_tag_slug_filter_romantic') {
+                    $ajax_parameters['td_atts']['live_filter'] = 'cur_post_same_tags_romantic'; // change the live filter for the related posts
+                }
+                else if ($ajax_parameters['td_filter_value'] == 'td_tag_slug_filter_surprised') {
+                    $ajax_parameters['td_atts']['live_filter'] = 'cur_post_same_tags_surprised'; // change the live filter for the related posts
+                }
+                else if ($ajax_parameters['td_filter_value'] == 'td_tag_slug_filter_sad') {
+                    $ajax_parameters['td_atts']['live_filter'] = 'cur_post_same_tags_sad'; // change the live filter for the related posts
+                }
+                // End ZA Custom
                 break;
         }
     }

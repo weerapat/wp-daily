@@ -116,8 +116,76 @@ function spb_render_scroll_progress_bar( $scroll_progress_options ) {
 	?>
 	<!-- override default color via settings page -->
 	<style type="text/css">
+	/*ZA Custom*/
+	<?php 
+	$category = get_the_category();
+	$catParID = $category[0]->category_parent;
+	$cat_ID = $category[0]->cat_ID;
+	switch ($catParID) {
+		case '3':
+		$color = '#ad47b3';
+		break;
+		case '4 ':
+		$color = '#1A6CBE';
+		break;
+		case '7':
+		$color = '#FF3963';
+		break;
+		case '8':
+		$color = '#4E5864';
+		break;
+		case '5':
+		$color = '#84bd00';
+		break;
+		case '6':
+		$color = '#FFC000';
+		break;
+		case '9':
+		$color = '#ff0000';
+		break;
+		case '10':
+		$color = '#00abc4';
+		break;
+		case '0':
+			switch($cat_ID){
+				case '3':
+				$color = '#ad47b3';
+				break;
+				case '4 ':
+				$color = '#1A6CBE';
+				break;
+				case '7':
+				$color = '#FF3963';
+				break;
+				case '8':
+				$color = '#4E5864';
+				break;
+				case '5':
+				$color = '#84bd00';
+				break;
+				case '6':
+				$color = '#FFC000';
+				break;
+				case '9':
+				$color = '#ff0000';
+				break;
+				case '10':
+				$color = '#00abc4';
+				break;
+			}
+			break;
+		default:
+		$color = '#fd6f08';
+		break;
+	}
+	?>
+	/*End ZA Custom*/
 	#progressBar.flat::-webkit-progress-value {
-		background-color: <?php echo $scroll_progress_options['progress_bar_colorpicker']; ?> !important;
+		/*background-color: <?php echo $scroll_progress_options['progress_bar_colorpicker']; ?> !important;*/
+
+		/*ZA Custom*/
+		background-color: <?php echo $color ?> !important;
+		/*End ZA Custom*/
 	}
 	<?php 
 		$offset_top = $scroll_progress_options['progress_bar_top_offset'];

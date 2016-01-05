@@ -115,18 +115,99 @@ class Sendy_Widget extends WP_Widget {
 
                 </script>
 
-                <form id="subscribe-form" onsubmit="return  validate_sendy_form()" action="<?php echo $instance['sendyurl']; ?>/subscribe" method="POST" accept-charset="utf-8">
+                <!-- <form id="subscribe-form" onsubmit="return  validate_sendy_form()" action="<?php echo $instance['sendyurl']; ?>/subscribe" method="POST" accept-charset="utf-8"> -->
+                <form id="subscribe-form" action="custom_sendy.php" method="POST" accept-charset="utf-8" target="_blank">
                   <?php if($instance['hidename']!='on'){ ?>
+
                     <label for="name">Name</label><br/>
                     <input type="text" name="name" id="subscriber-name"/>
                     <br/>
                     <?php } ?>
-                    <!-- <label for="email">Email</label><br/> -->
-                    <input type="text" name="email" id="subscriber-email" placeholder="อีเมล"/>
-                    <br/>
-                    <div> <input type="hidden" class="list" name="list" value="<?php echo $instance['listid']; ?>"/> </div>
 
-                    <input type="submit" name="sub-submit" value="สมัคร"  id="sub-submit"/>
+                    <!-- ZA Custom -->
+                    <?php 
+                    $content = array(
+                      array("category","ไลฟ์สไตล์","ไอที","ผู้หญิง","ผู้ชาย","ท่องเที่ยว","บันเทิง","เรื่องเด่น","ธุรกิจ"),
+                      array("name","lifestyle","IT","women","men","travel","entertainment","trending","business"),
+                      array("bgUrl","BG-Lifestyle.png","BG-IT.png","BG-Women.png","BG-Men.png","BG-Lifestyle.png","BG-IT.png","BG-Women.png","BG-Men.png"),
+                      array("key","nnySJe6MjLYUHfUDdCnspw","mQrg7cIHzAKvXQbVCCxpNA","jpkCdUXBWHqUF0O9NMpe8A","V24gKpQcLH5h8dY7mugBRg")
+                      );
+                      ?>
+                      <div class="subscribe-select-categories">
+                      <p class="p1">ติดตามเรื่องเด่นโดนใจคุณ</p>
+                        <?php for ($i = 1; $i <= 8; $i++) { ?>
+                        <div class="col-md-6" id="sub-cate-<?php echo $i ?>">
+                          <div class="sub-select-cate">
+                            <div class="newsletter-bg">
+                              <img src="/wp-content/uploads/2015/12/<?php echo $content[2][$i] ?>" alt="">
+                            </div>
+                            <div class="checkbox">
+                              <label onclick="toggleChk(this)">
+                                <input type="checkbox" name="key[]" value="<?php echo $content[3][$i] ?>">
+                                <img id="sub_add" src="/wp-content/uploads/2015/12/icon-add.png" alt="">
+                                <img id="sub_added" src="/wp-content/uploads/2015/12/icon-added.png" alt="">
+                              </label>
+                              <p><?php echo $content[0][$i] ?></p>
+                            </div>
+                          </div>
+                        </div>
+                        <?php
+                      } ?>
+                      <div class="col-md-6">
+                        <a onclick="cateChkAll()">เลือกหัวข้อทั้งหมด</a>
+                      </div>
+                      <div class="col-md-6">
+                        <a onclick="cateShowMore()">แสดงหัวข้อเพิ่มเติม <img src="/wp-content/uploads/2015/12/icon-caret-down.png" alt=""></a>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>  
+                    <script>
+                    jQuery( document ).ready(function() {
+                      jQuery('img#sub_added').hide();
+                      jQuery('div#sub-cate-5').hide();
+                      jQuery('div#sub-cate-6').hide();
+                      jQuery('div#sub-cate-7').hide();
+                      jQuery('div#sub-cate-8').hide();
+                    });
+                    function cateChkAll(){
+                      jQuery("div.sub-select-cate input[type=checkbox]").attr('checked','checked');
+                      jQuery('img#sub_add').hide();
+                      jQuery('img#sub_added').show();
+                    }
+                    function cateShowMore(){
+                      jQuery('div#sub-cate-5').show();
+                      jQuery('div#sub-cate-6').show();
+                      jQuery('div#sub-cate-7').show();
+                      jQuery('div#sub-cate-8').show();
+                    }
+                    function toggleChk(me){
+                      if(jQuery(me).find('input[type=checkbox]').is(':checked')){
+                        jQuery(me).find('img#sub_add').hide();
+                        jQuery(me).find('img#sub_added').show();
+                      }
+                      else{
+                        jQuery(me).find('img#sub_add').show();
+                        jQuery(me).find('img#sub_added').hide();
+                      }
+                    }
+                    </script>
+                    <!-- End ZA Custom -->
+
+                    <!-- <label for="email">Email</label><br/> -->
+
+                    <!-- ZA Custom -->
+                    <div class="text-sendy-subscribe">
+                      <p><b>กดติดตาม Rabbit Daily</b></p>
+                      <p>อัพเดทเรื่องสุดฮิต!</p>
+                    </div>
+
+                    <input type="text" name="email" id="subscriber-email" placeholder="อีเมล" required/>
+                    <!-- <br/> -->
+                    <div> <input type="hidden" class="list" name="list" value="<?php echo $instance['listid']; ?>"/> </div>
+                    <!-- <input type="submit" name="sub-submit" value="สมัคร"  id="sub-submit"/> -->
+                    <!-- ZA Custom -->
+                    <button type="submit" name="sub-submit" id="sub-submit"/><img src="/wp-content/uploads/2015/11/icon-subscribe.png" alt=""> สมัคร</button>
+
                     <div class="resp"></div>
                 </form>
 

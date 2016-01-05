@@ -11,7 +11,7 @@ class td_module_mega_menu extends td_module {
         ob_start();
         ?>
 
-        <div class="<?php echo $this->get_module_classes(array("td_mod_mega_menu")); ?>">
+        <!-- <div class="<?php echo $this->get_module_classes(array("td_mod_mega_menu")); ?>">
             <div class="td-module-image">
                 <?php echo $this->get_image('td_218x150');?>
                 <?php if (td_util::get_option('tds_category_module_mega_menu') == 'yes') { echo $this->get_category(); }?>
@@ -20,6 +20,18 @@ class td_module_mega_menu extends td_module {
             <div class="item-details">
                 <?php echo $this->get_title();?>
             </div>
+        </div> -->
+        
+        <!-- ZA Custom -->
+        <div class="<?php echo $this->get_module_classes(array("td_mod_mega_menu")); ?>">
+            <div class="td-module-image">
+                <?php echo $this->get_image('td_218x150');?>
+                <div class="item-details">
+                    <?php if (td_util::get_option('tds_category_module_mega_menu') == 'yes') { echo $this->get_category(); }?>
+                    <?php echo $this->get_title();?>
+                </div>
+            </div>
+
         </div>
         <?php return ob_get_clean();
     }

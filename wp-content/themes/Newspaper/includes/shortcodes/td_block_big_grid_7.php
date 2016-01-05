@@ -6,7 +6,8 @@
  */
 class td_block_big_grid_7 extends td_block {
 
-    const POST_LIMIT = 7;
+    // const POST_LIMIT = 7;
+    const POST_LIMIT = 6;
 
     function render($atts, $content = null){
 
@@ -57,7 +58,9 @@ class td_block_big_grid_7 extends td_block {
 		                $buffy .= '<div class="td-big-grid-scroll' . $td_scroll_posts . '">';
 	                }
 
-                    if ($post_count < 3) {
+                    // if ($post_count < 3) {
+                    // ZA
+                    if ($post_count < 1) {
                         $td_module_mx12 = new td_module_mx12($post);
                         $buffy .= $td_module_mx12->render($post_count);
 
@@ -65,7 +68,7 @@ class td_block_big_grid_7 extends td_block {
                         continue;
                     }
 
-                    $td_module_mx6 = new td_module_mx6($post);
+                    $td_module_mx6 = new td_module_mx10($post);
                     $buffy .= $td_module_mx6->render($post_count);
 
                     $post_count++;

@@ -489,7 +489,7 @@ case 'postpass' :
 	exit();
 
 case 'logout' :
-	check_admin_referer('log-out');
+	// check_admin_referer('log-out');
 
 	$user = wp_get_current_user();
 

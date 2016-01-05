@@ -52,7 +52,7 @@ $wp_admin_bar->add_menu( array(
 
 function custom_login_logo() {
     echo '<style type="text/css">
-        h1 a { background-image:url(http://rabbitworld.ready.co.th/wp-content/uploads/2015/11/225843_462492960440480_8604634_n.jpg) !important; }
+        h1 a { background-image:url(/wp-content/uploads/2015/11/225843_462492960440480_8604634_n.jpg) !important; }
     </style>';
 }
 
