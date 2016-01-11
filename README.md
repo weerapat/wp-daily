@@ -1,6 +1,6 @@
-daily.rabbit.co.th
+# daily.rabbit.co.th
 
-# Setup for local environment
+## Setup for local environment
 url = http://dev.daily.rabbit.co.th
 
 - Create your own wp-config.php file by using wp-config.example.php
