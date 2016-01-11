@@ -136,7 +136,7 @@ function zm_ajax_login_register_enqueue_scripts(){
         'login_handle'    => $zm_alr_settings['zm_alr_misc_login_handle'],
         'register_handle' => $zm_alr_settings['zm_alr_misc_register_handle'],
         'redirect'        => $zm_alr_settings['zm_alr_redirect_redirect_after_login_url'],
-        // 'match_error'    => AjaxLogin::status('passwords_do_not_match','description'), // Deprecated
+        'match_error'    =>  __('รหัสผ่านไม่ตรงกัน', ZM_ALR_TEXT_DOMAIN ),
         'wp_logout_url'   => wp_logout_url( site_url() ),
         'logout_text'     => __('ออกจากระบบ, ', ZM_ALR_TEXT_DOMAIN ),
         'close_text'      => __( 'x', ZM_ALR_TEXT_DOMAIN ),

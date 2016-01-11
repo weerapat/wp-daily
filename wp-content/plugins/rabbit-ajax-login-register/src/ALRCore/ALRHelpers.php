@@ -14,49 +14,49 @@ Class ALRHelpers {
         $status = array(
 
             'valid_username' => array(
-                'description' => null,
+                'description' => __('ชื่อผู้ใช้ ถูกต้อง!', ZM_ALR_TEXT_DOMAIN ),
                 'cssClass' => 'noon',
                 'code' => 'success'
                 ),
             'username_exists' => array(
-                'description' => __('Invalid username', ZM_ALR_TEXT_DOMAIN ),
+                'description' => __('ชื่อผู้ใช้นี้ถูกใช้งานแล้ว', ZM_ALR_TEXT_DOMAIN ),
                 'cssClass' => 'error-container',
                 'code' => 'show_notice'
                 ),
             'invalid_username' => array(
-                'description' => __( 'Invalid username', ZM_ALR_TEXT_DOMAIN ),
+                'description' => __( 'ชื่อผู้ใช้ไม่ถูกต้อง', ZM_ALR_TEXT_DOMAIN ),
                 'cssClass' => 'error-container',
                 'code' => 'show_notice'
                 ),
             'username_does_not_exists' => array(
-                'description' => __( 'Invalid username', ZM_ALR_TEXT_DOMAIN ),
+                'description' => __( 'ไม่มีชื่อผ้ใช้งานนี้ในระบบ', ZM_ALR_TEXT_DOMAIN ),
                 'cssClass' => 'error-container',
                 'code' => 'show_notice'
                 ),
 
             'incorrect_password' => array(
-                'description' => __( 'Invalid', ZM_ALR_TEXT_DOMAIN ),
+                'description' => __( 'รหัสผ่านไม่ถูกต้อง', ZM_ALR_TEXT_DOMAIN ),
                 'cssClass' => 'error-container',
                 'code' => 'show_notice'
                 ),
             'passwords_do_not_match' => array(
-                'description' => __('Passwords do not match.', ZM_ALR_TEXT_DOMAIN ),
+                'description' => __('รหัสผ่านไม่ถูกต้อง', ZM_ALR_TEXT_DOMAIN ),
                 'cssClass' =>'error-container',
                 'code' => 'show_notice'
                 ),
 
             'email_valid' => array(
-                'description' => null,
+                'description' => 'อีเมล์ถูกต้อง',
                 'cssClass' => 'noon',
                 'code' => 'success'
                 ),
             'email_invalid' => array(
-                'description' => __( 'Invalid Email', ZM_ALR_TEXT_DOMAIN ),
+                'description' => __( 'อีเมล์ไม่ถูกต้อง', ZM_ALR_TEXT_DOMAIN ),
                 'cssClass' => 'error-container',
                 'code' => 'show_notice'
                 ),
             'email_in_use' => array(
-                'description' => __( 'Invalid Email', ZM_ALR_TEXT_DOMAIN ),
+                'description' => __( 'อีเมล์นี้ถูกใช้งานแล้ว', ZM_ALR_TEXT_DOMAIN ),
                 'cssClass' => 'error-container',
                 'code' => 'show_notice'
                 ),
