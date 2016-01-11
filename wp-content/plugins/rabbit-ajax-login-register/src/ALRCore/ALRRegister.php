@@ -117,12 +117,12 @@ Class ALRRegister {
             ) ) );
 
         $fields_html = $this->_zm_alr_html->buildFormFieldsHtml( array(
-            $this->prefix . '_user_name' => array(
-                'title' => __( 'Username or your@mail.com', ZM_ALR_TEXT_DOMAIN ),
-                'type' => 'text',
-                'required' => true,
-                'extra' => 'autocorrect="none" autocapitalize="none"'
-                ),
+            // $this->prefix . '_user_name' => array(
+            //     'title' => __( 'Username or your@mail.com', ZM_ALR_TEXT_DOMAIN ),
+            //     'type' => 'text',
+            //     'required' => true,
+            //     'extra' => 'autocorrect="none" autocapitalize="none"'
+            //     ),
             $this->prefix . '_email' => array(
                 'title' => __( 'Your@mail.com', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'email',
@@ -130,18 +130,18 @@ Class ALRRegister {
                 'extra' => 'autocorrect="none" autocapitalize="none"'
                 ),
             $this->prefix . '_password' => array(
-                'title' => __( 'Password', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'รหัสผ่าน', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'password',
                 'required' => true,
                 'extra' => 'autocorrect="none" autocapitalize="none"'
                 ),
             $this->prefix . '_confirm_password' => array(
-                'title' => __( 'Confirm Password', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'ยืนยันรหัสผ่าน', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'password',
                 'extra' => 'autocorrect="none" autocapitalize="none"'
                 ),
             $this->prefix . '_submit_button' => array(
-                'title' => __( 'Sign Up', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'สมัครสมาชิก', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'submit',
                 'extra' => 'disabled'
                 )
@@ -394,12 +394,12 @@ Class ALRRegister {
         /**
          * Markup needed for jQuery UI dialog, our form is actually loaded via AJAX
          */
-        ?><div id="ajax-login-register-dialog" class="<?php echo $classes; ?>" title="<?php _e( 'Register',  ZM_ALR_TEXT_DOMAIN ); ?>" data-security="<?php print wp_create_nonce( 'register_form' ); ?>" style="display: none;">
+        ?><div id="ajax-login-register-dialog" class="<?php echo $classes; ?>" title="<?php _e( 'สมัครสมาชิก',  ZM_ALR_TEXT_DOMAIN ); ?>" data-security="<?php print wp_create_nonce( 'register_form' ); ?>" style="display: none;">
             <!-- ZA Custom -->
             <div class="ZA-register-text">
-                <p class="p1">Sign up for Rabbit Daily !</p>
-                <p class="p2">Get access to top stories !<br>
-                You can also save articles for later !</p>
+                <p class="p1">สมัครสมาชิก Rabbit Daily!</p>
+                <p class="p2">ติดตามเรื่องเด่น เรื่องดัง ได้ทันที<br>
+                แถมเก็บบทความไว้อ่านทีหลังได้ง่าย ๆ</p>
             </div>
             <?php do_action('facebook_login_button');?>
             <div class="login-line"></div>
