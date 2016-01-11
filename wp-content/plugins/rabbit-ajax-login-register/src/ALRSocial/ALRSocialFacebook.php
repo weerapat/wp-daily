@@ -60,8 +60,8 @@ Class ALRSocialFacebook {
         check_ajax_referer( 'facebook-nonce', 'security' );
 
         $user = array(
-            'username'   => $_POST['fb_response']['id'],
-            'user_login' => $_POST['fb_response']['id'],
+            'username'   => $_POST['fb_response']['first_name'],
+            'user_login' => $_POST['fb_response']['first_name'],
             'first_name' => $_POST['fb_response']['first_name'],
             'last_name'  => $_POST['fb_response']['last_name'],
             'email'      => $_POST['fb_response']['email'],
