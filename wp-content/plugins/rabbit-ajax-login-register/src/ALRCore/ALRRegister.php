@@ -117,14 +117,14 @@ Class ALRRegister {
             ) ) );
 
         $fields_html = $this->_zm_alr_html->buildFormFieldsHtml( array(
-            // $this->prefix . '_user_name' => array(
-            //     'title' => __( 'Username or your@mail.com', ZM_ALR_TEXT_DOMAIN ),
-            //     'type' => 'text',
-            //     'required' => true,
-            //     'extra' => 'autocorrect="none" autocapitalize="none"'
-            //     ),
+            $this->prefix . '_user_name' => array(
+                'title' => __( 'ชื่อล็อกอิน', ZM_ALR_TEXT_DOMAIN ),
+                'type' => 'text',
+                'required' => true,
+                'extra' => 'autocorrect="none" autocapitalize="none"'
+                ),
             $this->prefix . '_email' => array(
-                'title' => __( 'Your@mail.com', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'อีเมล', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'email',
                 'required' => true,
                 'extra' => 'autocorrect="none" autocapitalize="none"'

@@ -250,6 +250,8 @@ Class ALRLogin {
 
                         $status = apply_filters( $this->prefix . '_signon_status', $status, $args );
 
+                    } else {
+                        $status = $this->_zm_alr_helpers->status('passwords_do_not_match'); 
                     }
 
                 } else {
