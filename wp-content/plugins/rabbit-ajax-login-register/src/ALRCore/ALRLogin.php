@@ -144,12 +144,12 @@ Class ALRLogin {
 
         $fields_html = $this->_zm_alr_html->buildFormFieldsHtml( array(
             $this->prefix . '_user_name' => array(
-                'title' => __( '', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'ชื่อล็อกอิน', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'text',
                 'extra' => 'autocorrect="none" autocapitalize="none"'
                 ),
             $this->prefix . '_password' => array(
-                'title' => __( 'Password', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'รหัสผ่าน', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'password',
                 'extra' => 'autocorrect="none" autocapitalize="none"'
                 ),
@@ -158,7 +158,7 @@ Class ALRLogin {
             //     'type' => 'checkbox'
             //     ),
             $this->prefix . '_submit_button' => array(
-                'title' => __( 'Sign In', ZM_ALR_TEXT_DOMAIN ),
+                'title' => __( 'เข้าสู่ระบบ', ZM_ALR_TEXT_DOMAIN ),
                 'type' => 'submit'
                 )
             ), $this->prefix );
@@ -316,7 +316,7 @@ Class ALRLogin {
             ZM_ALR_NAMESPACE . '_dialog'
             ) ) ); ?>
         <div id="ajax-login-register-login-dialog" class="<?php echo $classes; ?>" title="<?php _e( 'Login', ZM_ALR_TEXT_DOMAIN ); ?>" data-security="<?php print wp_create_nonce( 'login_form' ); ?>">
-            <div class="ZA-login-text">สมัครสมาชิก Rabbit Daily!</div><!-- ZA Custom -->
+            <div class="ZA-login-text">เข้าสู่ระบบ Rabbit Daily!</div><!-- ZA Custom -->
             <?php do_action('facebook_login_button');?>
             <div class="login-line"></div>
             <div id="ajax-login-register-login-target" class="ajax-login-register-login-dialog"><?php _e( 'Loading...', ZM_ALR_TEXT_DOMAIN ); ?>
