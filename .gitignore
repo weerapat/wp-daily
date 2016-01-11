@@ -19,6 +19,7 @@ wp-content/plugins/*
 # specify (see the commented-out example for a hint on how to do this.)
 wp-content/themes/*
 !wp-content/themes/Newspaper-child/
+!wp-content/themes/Newspaper
 
 #List of files we should track
 !wp-config.example.php
