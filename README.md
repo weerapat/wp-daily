@@ -32,6 +32,8 @@ __wp-content/themes/Newspaper-child__
 
 Otherwise as soon as you update the core, plugin, or theme, your changes will be wiped out.
 
+Theme demo http://demo.tagdiv.com/newspaper/
+
 ## Customize a WordPress Plugin
 https://iandunn.name/the-right-way-to-customize-a-wordpress-plugin/
 
