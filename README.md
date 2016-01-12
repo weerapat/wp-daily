@@ -6,9 +6,9 @@ Development url : http://dev.daily.rabbit.co.th
 - Create your own wp-config.php file by using wp-config.example.php
 - Use rabbit_world.sql for importing Rabbit Daily data.
 
-Run queries below for changing Domain.
+Installing gulp js.
 ```
-update wp_posts set guid = replace(guid, 'rabbitworld.ready.co.th', 'dev.daily.rabbit.co.th')
+$ gulp install
 ```
 
 __You might need to use images from staging server__
