@@ -37,7 +37,6 @@ gulp.task('watch', function() {
 gulp.task('clean-compiled', function() {
     console.log('Cleaning build folder...');
     return gulp.src([
-            // paths.css_public + '*',
             paths.theme + 'style.css',
         ], {
             read: false

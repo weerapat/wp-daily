@@ -1,1 +1,13 @@
-
+/**
+ * Css related post page.
+ */
+header.td-post-title {
+    .td-post-comments,
+    .td-post-views {
+        float: none;
+        display: inline-block;
+        position: relative;
+        top: 2px;
+        margin-left: 22px;
+    }
+}
