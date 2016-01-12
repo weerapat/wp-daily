@@ -21,3 +21,4 @@ wp-content/themes/*
 
 wp-config.php
 *.sql
+node_modules
