@@ -1172,35 +1172,46 @@ display: none;
 }
 
 /***** Floating share button in detail view *****/
-.sumome-share-client-wrapper div.sumome-share-client.sumome-share-client-left-page {
-    margin-left: 5px;
+.sumome-share-client-wrapper div.sumome-share-client {
+    &.sumome-share-client-left-page {
+        margin-left: 5px;
+    }
+
+    .sumome-share-client-share {
+        margin-bottom: 5px !important;
+
+        &.sumome-share-client-share-share {
+            margin-bottom: 20px !important;
+
+            &::after {
+                width: 0;
+                height: 0;
+                border-left: 25px solid transparent;
+                border-right: 25px solid transparent;
+                border-top: 15px solid #fd6f0b;
+                content: "";
+                position: absolute;
+                top: 50px;
+                left: 0;
+            }
+        }
+    }
 }
 
-.sumome-share-client-wrapper div.sumome-share-client .sumome-share-client-share {
-    margin-bottom: 5px !important;
+.td-post-content {
+    .wpfp-span {
+        margin-top: 120px !important;
+        margin-left: 10px !important;
+    }
+
+    img {
+        margin-bottom: 0;
+    }
 }
 
-.sumome-share-client-wrapper div.sumome-share-client .sumome-share-client-share.sumome-share-client-share-share {
-    margin-bottom: 20px !important;
-}
-
-.sumome-share-client-wrapper div.sumome-share-client .sumome-share-client-share.sumome-share-client-share-share::after {
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-top: 15px solid #FD6F0B;
-    content: "";
-    position: absolute;
-    top: 50px;
-    left: 0;
-}
-
-.td-post-content .wpfp-span {
-    margin-top: 120px !important;
-    margin-left: 10px !important;
-}
-
-.td-post-content img {
-    margin-bottom: 0;
+@media (max-width: 767px) {
+    .ui-dialog {
+        top: auto !important;
+        bottom: 10% !important;
+    }
 }
