@@ -14,7 +14,7 @@ wp-content/plugins/*
 wp-content/themes/*
 !wp-content/themes/Newspaper-child/
 !wp-content/themes/Newspaper
-wp-content/themes/Newspaper-child/css/*
+wp-content/themes/Newspaper-child/assets/css/*
 wp-content/themes/Newspaper-child/style.css
 
 #List of files we should track
